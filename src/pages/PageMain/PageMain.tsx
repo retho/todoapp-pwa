@@ -1,12 +1,13 @@
 import { bem } from 'src/corelib/bem'
 import styles from './PageMain.module.scss'
-import type { InferArrayElement } from 'src/corelib/common';
+import { assertNever, type InferArrayElement } from 'src/corelib/common';
 import { useMemo, type ComponentProps, type ReactNode } from 'react';
 import { BellOutlined, CalendarOutlined, CheckOutlined, MenuOutlined } from '@ant-design/icons';
 import { Tabs } from 'antd';
 import type { RouteHref } from 'src/corelib/router/core';
 import { appHref, routes } from 'src/router/routes';
 import { RouteLink } from 'src/corelib/router/react-components';
+import { PageMainTodos } from './PageMainTodos';
 
 const enumSubpage = ['todos', 'reminders', 'calendar', 'extras'] as const;
 type Subpage = InferArrayElement<typeof enumSubpage>;
@@ -76,7 +77,15 @@ export const PageMain = ({ subpage }: Props) => {
     <div className={css()}>
       <div className={css('header')}>{subpage2label[subpage]}</div>
       <div className={css('bodyWrapper')}>
-        <div className={css('body')}>body</div>
+        <div className={css('body')}>
+          {(() => {
+            if (subpage === 'todos') return <PageMainTodos />;
+            if (subpage === 'reminders') return <div>not implemented yet</div>;
+            if (subpage === 'calendar') return <div>not implemented yet</div>;
+            if (subpage === 'extras') return <div>not implemented yet</div>;
+            return assertNever(subpage);
+          })()}
+        </div>
       </div>
       <div className={css('footer')}>
         <SubpageSelector

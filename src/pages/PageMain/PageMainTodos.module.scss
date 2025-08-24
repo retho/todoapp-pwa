@@ -1,0 +1,69 @@
+
+.PageMainTodos {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  row-gap: 8px;
+
+  &__list {
+    margin-top: 8px;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.TodoItem {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 12px;
+  align-items: center;
+
+  &__controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.PageMainTodosTabSelector {
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    .ant-tabs-nav-list.ant-tabs-nav-list {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      gap: 24px;
+    }
+
+    .ant-tabs-tab.ant-tabs-tab.ant-tabs-tab {
+      position: relative;
+      margin: unset;
+      justify-content: center;
+
+      // &:hover {
+      //   color: $global-palette-primary-lighter;
+      // }
+
+      // .ant-tabs-tab-btn:active {
+      //   color: $global-palette-primary;
+      // }
+      // &.ant-tabs-tab-active .ant-tabs-tab-btn {
+      //   color: $global-palette-primary;
+      // }
+    }
+  }
+}
