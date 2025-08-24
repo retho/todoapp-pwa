@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import appLogo from '/favicon.svg'
-import PWABadge from './PWABadge.tsx'
-import './App.css'
+import appLogo from './assets/vite.svg'
+import './PageReactViteStarter.css'
 
-function App() {
+function PageReactViteStarter() {
   const [count, setCount] = useState(0)
 
   return (
@@ -29,9 +28,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <PWABadge />
     </>
   )
 }
 
-export default App
+export default PageReactViteStarter
