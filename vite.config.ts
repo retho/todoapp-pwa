@@ -1,6 +1,7 @@
 import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import * as path from 'node:path';
 
 const plugin_pwa = () => VitePWA({
   strategies: 'injectManifest',
@@ -38,5 +39,17 @@ export default defineConfig({
   plugins: [react(), plugin_pwa()],
   server: {
     port: 6789,
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use 'src/scss/common.scss' as *;`,
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      'src': path.resolve(__dirname, './src'),
+    },
   },
 })

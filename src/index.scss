@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $global-palette-background;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body::selection {
+  background-color: $global-palette-primary;
+  color: #fff;
+}
+
+a {
+  color: unset;
+
+  &:hover, &:active, &:focus {
+    color: unset;
+  }
+}
