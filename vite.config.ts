@@ -40,6 +40,9 @@ export default defineConfig({
   server: {
     port: 6789,
   },
+  preview: {
+    port: 6987,
+  },
   css: {
     preprocessorOptions: {
       scss: {

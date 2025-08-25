@@ -17,13 +17,14 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
+    // "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
     /* custom */
+    "noUnusedLocals": false,
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
   },

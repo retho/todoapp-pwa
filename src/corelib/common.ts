@@ -47,7 +47,8 @@ export type ADT<K extends string, P = unknown> = { kind: K } & P;
 // * https://stackoverflow.com/questions/41253310/typescript-retrieve-element-type-information-from-array-type
 export type InferArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
-export type InferArguments<T extends (...args: unknown[]) => unknown> = Parameters<T>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type InferArguments<T extends (...args: any[]) => any> = Parameters<T>;
 export type InferPromisePayload<T extends Promise<unknown>> = T extends Promise<infer P>
   ? P
   : never;

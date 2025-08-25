@@ -9,7 +9,8 @@ import { Router } from './router/Router.tsx'
 
 const browserHistory = createBrowserHistory();
 
-createRoot(document.getElementById('root')!).render(
+const root = createRoot(document.getElementById('root')!)
+root.render(
   <StrictMode>
     <RouterProvider history={browserHistory}>
       <PWABadge />
@@ -17,3 +18,7 @@ createRoot(document.getElementById('root')!).render(
     </RouterProvider>
   </StrictMode>,
 )
+
+const handleError = () => root.unmount();
+self.addEventListener('error', handleError)
+self.addEventListener('unhandledrejection', handleError)

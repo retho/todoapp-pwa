@@ -7,6 +7,7 @@ import { globalIgnores } from 'eslint/config'
 
 const commonRules = {
   "@typescript-eslint/no-unused-vars": ['warn'],
+  "@typescript-eslint/no-misused-promises": ['warn'],
 }
 
 const disabledRules = {
@@ -25,8 +26,12 @@ export default tseslint.config([
       reactRefresh.configs.vite,
     ],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2024,
       globals: globals.browser,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
     rules: {
       ...commonRules,
