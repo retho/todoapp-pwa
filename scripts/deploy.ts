@@ -8,7 +8,9 @@ if (isThereUncommitedChanges) {
 
 cp.execSync("yarn run build", {stdio: 'inherit'});
 
+// eslint-disable-next-line no-console
 console.log('\n\nPublishing to gh-pages...')
 await ghpages.publish('dist', {
   branch: 'gh-pages',
+  history: false,
 })

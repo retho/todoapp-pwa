@@ -7,6 +7,14 @@ yarn # install dependencies
 yarn run dev
 ```
 
+# Deploy
+
+App published to https://retho.github.io/todoapp-pwa/ via [Github Pages](https://docs.github.com/en/pages)
+
+```bash
+yarn run deploy
+```
+
 # PWA
 
 created by
