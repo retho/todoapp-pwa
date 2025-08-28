@@ -1,7 +1,8 @@
 import { isEmpty } from "lodash-es";
 import type { Brand } from "../common";
 
-export const BASE_URL = location.origin;
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '')
+export const baseURL = location.origin + BASE_URL;
 
 export type PathParamsUnknown = Record<string, string>;
 export type SearchParamsUnknown = Record<string, undefined | null | unknown>;
@@ -25,7 +26,7 @@ export const declareRoute = <
   pattern: string
 ): Route<PathParams, SearchParams> => {
   return {
-    pattern,
+    pattern: BASE_URL + pattern,
     __params__: null as unknown as PathParams,
     __query__: null as unknown as SearchParams,
   };
@@ -51,7 +52,7 @@ export const createRouteHref = <
   searchParams: Partial<InferRouteSearchParams<R>>
 ): RouteHref => {
   const pathname = calcPathname(route.pattern, pathParams);
-  const url = new URL(pathname, BASE_URL);
+  const url = new URL(pathname, baseURL);
   if (!isEmpty(searchParams)) {
     url.searchParams.set('params', encodeSearchParam(searchParams))
   }
@@ -80,7 +81,7 @@ export const getQueryEncoded = (searchStr: string) => {
 }
 
 export const matchRoute = (route: Route<PathParamsUnknown, SearchParamsUnknown>, url: URL) => {
-  const pattern = new URLPattern({ pathname: route.pattern, baseURL: BASE_URL });
+  const pattern = new URLPattern({ pathname: route.pattern, baseURL });
 
   const matched = pattern.exec(url)
   if (!matched) return null;

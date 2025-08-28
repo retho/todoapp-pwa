@@ -61,4 +61,5 @@ export default defineConfig({
       'src': path.resolve(__dirname, './src'),
     },
   },
+  base: '/todoapp-pwa', // * https://vite.dev/guide/build.html#public-base-path
 })

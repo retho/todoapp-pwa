@@ -1,5 +1,5 @@
 import { useMemo, useRef } from "react";
-import { BASE_URL, calcPathname, matchRoute, type InferRoutePathParams, type InferRouteSearchParams, type PathParamsUnknown, type Route, type SearchParamsUnknown, type UsedQueryKey } from "./core";
+import { baseURL, calcPathname, matchRoute, type InferRoutePathParams, type InferRouteSearchParams, type PathParamsUnknown, type Route, type SearchParamsUnknown, type UsedQueryKey } from "./core";
 import { getCurrentUrl, useRouterContext } from "./react-components.utils"
 import { panic, useRefedFn } from "../common";
 
@@ -136,7 +136,7 @@ export const useRoutePathParams = <
       isUpdatePlannedRef.current = false;
 
       const pathname = calcPathname(route.pattern, { ...pathParams, [key]: updatedStateRef.current });
-      const url = new URL(pathname, BASE_URL);
+      const url = new URL(pathname, baseURL);
       url.search = historyOrigin.location.search;
       historyOrigin.replace(url.toString());
     })

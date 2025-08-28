@@ -7,7 +7,8 @@ import { globalIgnores } from 'eslint/config'
 
 const commonRules = {
   "@typescript-eslint/no-unused-vars": ['warn'],
-  "@typescript-eslint/no-misused-promises": ['warn'],
+  "no-console": ['warn'],
+  // "@typescript-eslint/no-misused-promises": ['warn'],
 }
 
 const disabledRules = {
