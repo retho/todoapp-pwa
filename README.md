@@ -21,3 +21,10 @@ also useful:
 
 pwa apis
 - https://stackoverflow.com/questions/36944167/background-events-in-progressive-web-apps-building-an-alarm-clock-app
+
+
+# Licenses
+
+- https://choosealicense.com/
+- https://choosealicense.com/licenses/
+- https://docs.github.com/ru/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
