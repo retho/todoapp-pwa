@@ -1,0 +1,16 @@
+
+.PageMainExtras {
+  position: relative;
+}
+
+.PageMainExtrasAbout {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

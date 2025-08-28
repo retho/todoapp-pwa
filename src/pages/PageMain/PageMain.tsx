@@ -8,6 +8,7 @@ import type { RouteHref } from 'src/corelib/router/core';
 import { appHref, routes } from 'src/router/routes';
 import { RouteLink } from 'src/corelib/router/react-components';
 import { PageMainTodos } from './PageMainTodos';
+import { PageMainExtras } from './PageMainExtras';
 
 const enumSubpage = ['todos', 'reminders', 'calendar', 'extras'] as const;
 type Subpage = InferArrayElement<typeof enumSubpage>;
@@ -82,7 +83,7 @@ export const PageMain = ({ subpage }: Props) => {
             if (subpage === 'todos') return <PageMainTodos />;
             if (subpage === 'reminders') return <div>not implemented yet</div>;
             if (subpage === 'calendar') return <div>not implemented yet</div>;
-            if (subpage === 'extras') return <div>not implemented yet</div>;
+            if (subpage === 'extras') return <PageMainExtras />;
             return assertNever(subpage);
           })()}
         </div>

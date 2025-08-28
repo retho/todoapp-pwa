@@ -29,6 +29,13 @@
     align-items: center;
     gap: 6px;
   }
+
+  &__description {
+    &--done {
+      text-decoration: line-through;
+      color: #a0a0a0;
+    }
+  }
 }
 
 .PageMainTodosTabSelector {

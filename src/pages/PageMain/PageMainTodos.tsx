@@ -38,7 +38,7 @@ const TodoItem = ({ todo, onUpdate, onRemove, activeButtons }: TodoItemProps) =>
     <Card size='small'>
       <div className={cssTodoItem()}>
         <div><Checkbox checked={todo.done} onClick={() => onUpdate({ ...todo, done: !todo.done })} /></div>
-        <div>
+        <div className={cssTodoItem('description', {done: todo.done})}>
           {isEditMode && (
             <form onSubmit={handleFormSubmitDescription}>
               <Input
@@ -54,7 +54,12 @@ const TodoItem = ({ todo, onUpdate, onRemove, activeButtons }: TodoItemProps) =>
         </div>
         <div className={cssTodoItem('controls')}>
           {activeButtons.btnEdit && (
-            <Button color='default' variant='outlined' onClick={() => setIsEditMode(true)}>
+            <Button
+              color='default'
+              variant='outlined'
+              onClick={() => setIsEditMode(true)}
+              disabled={todo.done}
+            >
               <EditOutlined />
             </Button>
           )}
