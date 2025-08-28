@@ -9,6 +9,7 @@ yarn run dev
 
 # PWA
 
+created by
 - https://vite-pwa-org.netlify.app/guide/
 
 also useful:
@@ -17,3 +18,6 @@ also useful:
 - https://web.dev/learn/pwa/workbox
 - https://dev.to/noconsulate/react-pwa-with-workbox-6dl
 - https://habr.com/ru/companies/domclick/articles/523106/
+
+pwa apis
+- https://stackoverflow.com/questions/36944167/background-events-in-progressive-web-apps-building-an-alarm-clock-app
