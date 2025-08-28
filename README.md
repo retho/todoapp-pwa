@@ -1,7 +1,7 @@
 
 # Quickstart
 
-[nodejs v22](https://nodejs.org/en) recommended.
+[nodejs v22](https://nodejs.org/en) with [yarn](https://yarnpkg.com/) recommended.
 ```bash
 yarn # install dependencies
 yarn run dev
